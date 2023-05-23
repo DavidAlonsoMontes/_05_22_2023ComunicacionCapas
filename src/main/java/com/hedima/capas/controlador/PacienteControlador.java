@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -40,8 +41,20 @@ public class PacienteControlador {
     public String mostrarTodos(Model modelo){
         //LLamada a servicio
         List<Paciente> pacientes = servicio.mostrarTodos();
-        modelo.addAttribute("Paciente", pacientes);
+        modelo.addAttribute("pacientes", pacientes);
         return "mostrartodos";
+    }
+    @GetMapping("/pacientes/mostraruno")
+    public String mostrarUno(Model modelo){
+        Paciente p1 = new Paciente();
+        modelo.addAttribute("paciente",p1);
+        return "funopaciente";
+
+    }
+    @PostMapping("pacientes/uno")
+    public String mostrarUnob(Paciente p1, RedirectAttributes ra) {
+        Paciente p2 = servicio.mostrarUno(p1.getIdPaciente());
+        return "funopaciente";
     }
 }
 

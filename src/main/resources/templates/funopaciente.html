@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar un paciente</title>
+</head>
+<body>
+<h1>Mostrar un Paciente</h1>
+<form th:action="@{'pacientes/uno'}" method="post" th:object="${paciente}">
+  <label for="idPaciente">ID</label><
+  <input type="number" id="idPaciente" th:field="*{idPaciente}" required="">
+  <input type="submit" value="Enviar Información">
+</form>
+
+</body>
+</html>

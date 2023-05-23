@@ -7,5 +7,21 @@
 <body>
 <h1>Pacientes</h1>
 <!--Definir la tabla con th:each-->
+<table>
+    <thead>
+    <tr>
+        <th>ID Paciente</th>
+        <th>Nombre</th>
+        <th>Edad</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="a: ${pacientes}">
+        <td>[[${a.idPaciente}]]</td>
+        <td>[[${a.nombre}]]</td>
+        <td>[[${a.edad}]]</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

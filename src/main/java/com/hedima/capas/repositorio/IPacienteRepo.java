@@ -10,4 +10,6 @@ public interface IPacienteRepo {
     Paciente altaPaciente(Paciente p);
 
     List<Paciente> mostrarTodos();
+
+    Paciente mostrarUno(int idPaciente);
 }

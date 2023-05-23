@@ -26,4 +26,9 @@ public class PacienteServicioImpl implements IPacienteServicio{
     public List<Paciente> mostrarTodos() {
         return repo.mostrarTodos();
     }
+
+    @Override
+    public Paciente mostrarUno(int idPaciente) {
+        return repo.mostrarUno(idPaciente);
+    }
 }
